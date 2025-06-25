@@ -1,0 +1,20 @@
+<div class="list-container">
+  <h2>Products</h2>
+
+  <app-search-box
+    [term]="(search$ | async)!"
+    (termChange)="searchTerm$.next($event)"
+  ></app-search-box>
+
+  <ul *ngIf="products$ | async as list">
+    <li *ngFor="let p of list">
+      <a [routerLink]="p.id.toString()">
+        {{ p.product_name }} – ₹{{ p.price }}
+      </a>
+    </li>
+  </ul>
+
+  <button type="button" class="btn btn-primary" routerLink="add">
+    + Add product
+  </button>
+</div>

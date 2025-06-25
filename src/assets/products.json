@@ -1,0 +1,37 @@
+[
+  {
+    "product_name": "Laptop",
+    "brand": "TechBrand",
+    "price": 1200,
+    "category": "Electronics",
+    "in_stock": true
+  },
+  {
+    "product_name": "Running Shoes",
+    "brand": "Sporty",
+    "price": 80,
+    "category": "Footwear",
+    "in_stock": true
+  },
+  {
+    "product_name": "Coffee Maker",
+    "brand": "BrewMaster",
+    "price": 150,
+    "category": "Home Appliances",
+    "in_stock": false
+  },
+  {
+    "product_name": "Smartphone",
+    "brand": "PhoneCo",
+    "price": 999,
+    "category": "Electronics",
+    "in_stock": true
+  },
+  {
+    "product_name": "Backpack",
+    "brand": "TravelGear",
+    "price": 60,
+    "category": "Accessories",
+    "in_stock": true
+  }
+]

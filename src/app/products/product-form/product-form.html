@@ -1,0 +1,55 @@
+<h2>{{ isEdit ? 'Edit' : 'Add' }} Product</h2>
+
+<form [formGroup]="form" (ngSubmit)="save()" novalidate>
+  <div>
+    <label for="product_name">Name</label>
+    <input type="text" id="product_name" formControlName="product_name" />
+    <div
+      *ngIf="form.controls.product_name.invalid && form.controls.product_name.touched"
+    >
+      <small class="error">Name is required.</small>
+    </div>
+  </div>
+
+  <div>
+    <label for="brand">Brand</label>
+    <input type="text" id="brand" formControlName="brand" />
+  </div>
+
+  <div>
+    <label for="category">Category</label>
+    <input type="text" id="category" formControlName="category" />
+  </div>
+
+  <div>
+    <label for="price">Price</label>
+    <input id="price" type="number" formControlName="price" />
+    <div *ngIf="form.controls.price.invalid && form.controls.price.touched">
+      <small class="error">Price must be 0 or more.</small>
+    </div>
+  </div>
+
+  <div>
+    <label for="in_stock" class="checkbox-label">
+      <input id="in_stock" type="checkbox" formControlName="in_stock" />
+      In Stock
+    </label>
+  </div>
+
+  <div class="form-buttons">
+    <button type="submit" class="btn btn-primary" [disabled]="form.invalid">
+      Save
+    </button>
+    <button
+      *ngIf="isEdit"
+      type="button"
+      class="btn btn-primary"
+      (click)="remove()"
+    >
+      Delete
+    </button>
+    <button type="button" class="btn btn-primary" [routerLink]="['/products']">
+      Cancel
+    </button>
+  </div>
+</form>

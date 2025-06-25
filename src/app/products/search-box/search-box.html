@@ -1,0 +1,7 @@
+<input
+  class="search"
+  type="text"
+  placeholder="Search by name"
+  [value]="term"
+  (input)="termChange.emit(($any($event.target).value))"
+/>

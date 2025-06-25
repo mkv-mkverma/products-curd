@@ -3,11 +3,10 @@ import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
   imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  templateUrl: './app.html',
+  styleUrl: './app.scss'
 })
-export class AppComponent {
-  title = 'products-crud-app';
+export class App {
+  protected title = 'products-crud-app';
 }

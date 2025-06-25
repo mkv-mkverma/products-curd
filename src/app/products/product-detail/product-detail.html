@@ -1,0 +1,40 @@
+<ng-container *ngIf="product$ | async as p">
+  <article class="card">
+    <h3>{{ p.product_name }}</h3>
+    <p>Brand: {{ p.brand }}</p>
+    <p>Category: {{ p.category }}</p>
+    <p>Price: ₹{{ p.price }}</p>
+    <p [class.out]="!p.in_stock">
+      Status: {{ p.in_stock ? 'In stock' : 'Out of stock' }}
+    </p>
+  </article>
+
+  <nav class="nav">
+    <button
+      type="button"
+      class="btn btn-primary"
+      *ngIf="prevId$ | async as prev"
+      [routerLink]="['/products', prev]"
+    >
+      ⬅ Prev
+    </button>
+    <button
+      type="button"
+      class="btn btn-primary"
+      *ngIf="nextId$ | async as next"
+      [routerLink]="['/products', next]"
+    >
+      Next ➡
+    </button>
+    <button
+      type="button"
+      class="btn btn-primary"
+      [routerLink]="['../edit', p.id]"
+    >
+      ✎ Edit
+    </button>
+    <button type="button" class="btn btn-primary" [routerLink]="['/products']">
+      Cancel
+    </button>
+  </nav>
+</ng-container>
