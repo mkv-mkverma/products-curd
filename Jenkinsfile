@@ -26,9 +26,9 @@ pipeline {
       }
     }
 
-    stage('Deploy to S3') {
+   stage('Deploy to S3') {
       steps {
-        sh 'aws s3 sync ./dist/products-crud-app s3://$S3_BUCKET --delete'
+        sh 'aws s3 sync ./dist/products-crud-app/ s3://my-jenkins-web-app --delete'
       }
     }
 
