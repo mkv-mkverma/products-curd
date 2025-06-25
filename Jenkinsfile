@@ -2,28 +2,23 @@ pipeline {
   agent any
 
   stages {
-    stage('Clone Repo') {
+    stage('Clone repo') {
       steps {
-        git 'https://github.com/mkv-mkverma/products-curd.git'
+        git branch: 'main',
+            url: 'https://github.com/mkv-mkverma/products-curd.git'
       }
     }
 
-    stage('Install Dependencies') {
-      steps {
-        sh 'npm install'
-      }
+    stage('Install dependencies') {
+      steps { sh 'npm install' }
     }
 
-    stage('Build React App') {
-      steps {
-        sh 'npm run build'
-      }
+    stage('Build React app') {
+      steps { sh 'npm run build' }
     }
 
-    stage('Post-Build') {
-      steps {
-        echo 'Build completed!'
-      }
+    stage('Post build') {
+      steps { echo '✅ Build completed!' }
     }
   }
 }
