@@ -3,7 +3,7 @@ pipeline {
 
   environment {
     AWS_DEFAULT_REGION = 'us-east-1'     // ✅ Match your configured region
-    S3_BUCKET = 'your-s3-bucket-name'    // 🔁 Replace with your actual bucket name
+    S3_BUCKET = 'my-jenkins-web-app'    // 🔁 Replace with your actual bucket name
   }
 
   stages {
