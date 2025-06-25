@@ -2,6 +2,8 @@ pipeline {
   agent any
 
   environment {
+    AWS_ACCESS_KEY_ID = credentials('AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
     AWS_DEFAULT_REGION = 'us-east-1'     // ✅ Match your configured region
     S3_BUCKET = 'my-jenkins-web-app'    // 🔁 Replace with your actual bucket name
   }
