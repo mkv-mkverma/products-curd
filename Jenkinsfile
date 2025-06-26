@@ -30,9 +30,10 @@ pipeline {
 
    stage('Deploy to S3') {
       steps {
-        sh 'aws s3 sync ./dist/products-crud-app/ s3://my-jenkins-web-app --delete'
+        sh 'aws s3 sync ./dist/products-crud-app/browser s3://my-jenkins-web-app --delete'
       }
     }
+
 
     stage('Post build') {
       steps {
